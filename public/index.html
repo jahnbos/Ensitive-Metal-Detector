@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ESP32 Magnetic Detector – Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="hdr">
+      <h1>Real Time Status</h1>
+    </header>
+
+    <main class="row">
+      <!-- LEFT: Signal + KPI + Logs -->
+      <section class="card">
+        <h2 class="title">Signal</h2>
+        <div id="signalChart" class="chart" aria-label="Signal chart placeholder">
+          No data yet
+        </div>
+
+        <!-- KPI BAR -->
+        <div class="kpis kpis-pill">
+          <div class="kpi-left">
+            <div class="kpi-item">
+              <div class="kpi-label">Magnetic Sensor</div>
+              <div class="kpi-value tabnums"><span id="valNow">0</span><small>%</small></div>
+            </div>
+            <div class="kpi-item">
+              <div class="kpi-label">Detectval</div>
+              <div class="kpi-value tabnums"><span id="valCount">0</span></div>
+              <a id="lnkReset" href="#" class="kpi-reset">Reset</a>
+            </div>
+          </div>
+          <button id="btnReset" class="btn btn-pill">Reset</button>
+        </div>
+
+        <h2 class="title">Logs</h2>
+        <div id="logsBox" class="logs">
+          <table>
+            <thead>
+              <tr><th>Time</th><th>Magnetic Sensor</th></tr>
+            </thead>
+            <tbody id="logsTbody" class="tabnums">
+              <tr><td>15:23:45</td><td>334</td></tr>
+              <tr><td>15:22:11</td><td>297</td></tr>
+              <tr><td>15:18:59</td><td>526</td></tr>
+              <tr><td>15:12:33</td><td>719</td></tr>
+              <tr><td>15:10:27</td><td>601</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- RIGHT: OLED + Controls + Detection History -->
+      <section class="right-col">
+        <div class="card">
+          <h2 class="title">OLED</h2>
+          <div class="oled">
+            <div class="oled-title"><span>OLED</span><span>Preview</span></div>
+            <div class="screen">
+              <div id="ol1" class="tabnums">MAG: --- TH:--</div>
+              <div id="ol2" class="tabnums">STATE: IDLE CNT: 0</div>
+              <div id="ol3" class="tabnums">BUZZER:OFF SERVO:  0</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card controls">
+          <h2 class="title">Controls</h2>
+          <div class="lab">
+            <label class="switch"><input id="swServo" type="checkbox" /><i></i></label>
+            <span>Test Servo</span>
+          </div>
+          <div class="lab">
+            <label class="switch"><input id="swBuzzer" type="checkbox" /><i></i></label>
+            <span>Test Buzzer</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="title">Detection History</h2>
+          <div id="histChart" class="chart small-chart">No data yet</div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
