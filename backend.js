@@ -111,7 +111,7 @@ function getHistogram(binCount = 8) {
 /* =========================
  * HTTP + WebSocket (manual upgrade)
  * ========================= */
-const PORT = 3100; // เปลี่ยนพอร์ตที่นี่ได้
+const PORT = process.env.PORT || 3100;
 const server = http.createServer(app);
 
 // ใช้ noServer และปิด perMessageDeflate กันปัญหาเฟรม

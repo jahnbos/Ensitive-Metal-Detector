@@ -43,10 +43,10 @@ bool servoAttached = false;
 bool prevDetected = false;
 
 // ---------- Wi-Fi / Backend ----------
-const char* WIFI_SSID = "Winner";
-const char* WIFI_PASS = "12345678";
+const char* WIFI_SSID = "YOUR_WIFI_SSID";
+const char* WIFI_PASS = "YOUR_WIFI_PASSWORD";
 
-const char* HOST = "172.20.10.4";  // IP เครื่องที่รัน backend.js
+const char* HOST = "YOUR_BACKEND_IP";  // IP เครื่องที่รัน backend.js
 const uint16_t PORT = 3100;        // พอร์ต backend.js (ปกติ 3100)
 
 // ---------- WS (รับคำสั่ง) ----------
